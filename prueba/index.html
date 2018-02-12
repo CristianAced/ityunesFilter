@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>MUZIK</title>
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="js/jQuery.3.3.1.js" type="text/javascript"></script>	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.17/angular-filter.min.js"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="./js/acedmodule.js"></script>
+</head>
+<body ng-app="AcedApp">
+	<header id="header" class="container-fluid">
+		<div class="row">
+			<a id="logo" class="col-12 col-sm-4 col-md-3 col-lg-2 text-center" href="#">
+				<img src="img/logo.png">
+			</a>
+			<div id="search" class="col-12 col-sm-8 col-md-9 col-lg-10 text-xs-center">
+				<input type="text" placeholder="Music Song">
+			</div>
+		</div>
+	</header>
+	<div id="boxContent" class="container-fluid" ng-controller="ItunesController" ng-init="init()">
+		<div class="row">
+			<div id="navLeft" class="col-12 col-sm-4 col-md-3 col-lg-2 text-center">
+				<h4>MUSIC</h4>
+				<ul>
+					<li>
+						<a href="#" ng-click="filtercategorysongs(null)">Todos</a>
+					</li>
+					<li ng-repeat="cat in categories">						
+						<a href="#" ng-click="filtercategorysongs(cat)">{{cat}}</a>
+					</li>					
+				</ul>
+			</div>
+			<div id="contenPage" class="col-12 col-sm-8 col-md-9 col-lg-10">
+				<ul class="row">
+					<li class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 text-center" ng-repeat="item in filtereddata" data-filterCategory="{{item['category'].attributes.label}}">
+						<a href="#">
+								<img ng-repeat="a in item['im:image']" ng-if="$index==2"  src="{{a['label']}}" alt=""> 
+							<p>{{item['im:artist'].label}}</p>
+						</a>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+	</div>
+	<!-- /header -->
+</body>
+</html>

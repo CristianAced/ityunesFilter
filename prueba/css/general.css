@@ -1,0 +1,112 @@
+a#logo {
+    background: #fb2d5c;
+    padding: 24px 0;
+    position: relative;
+    z-index: 9;
+}
+
+div#search input {
+    font-size: 22px;
+    background: none;
+    border: none;
+    line-height: 0;
+    width: 80%;
+}
+
+div#search input:focus{
+	outline: none;
+}
+
+div#search {
+    padding: 24px 5% 0;
+    background-color: #f2f2f4;
+    position: relative;
+    z-index: 9;
+}
+
+#navLeft {
+    background-color: #2b2f3e;
+    padding-top: 120px;
+    padding-bottom: 50px;
+    position: absolute;
+    min-height: 100%;
+    top: 0;
+}
+
+#contenPage {
+    background-color: #fff;
+    padding-top: 120px;
+    padding-bottom: 20px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    overflow: auto;
+}
+
+div#navLeft h4 {
+    text-align: left;
+    padding-left: 20px;
+    color: #fff;
+    font-weight: 200;
+    font-size: 18px;
+}
+
+div#navLeft ul {
+    padding: 0;
+    list-style-type: none;
+    text-align: left;
+    padding-left: 50px;
+}
+
+div#navLeft ul a {
+    font-size: 15px;
+    color: #a0a0a0;
+}
+
+div#navLeft ul a:hover{
+    color: #fff;
+    text-decoration: none;
+}
+
+div#contenPage ul {
+    padding-left: 0;
+}
+
+#contenPage li img{
+    margin-bottom: 15px;
+}
+
+#contenPage li{
+	list-style-type: none;
+    margin-bottom: 25px;
+}
+
+.repeated-item.ng-enter {
+    -webkit-transition:0.5s linear all;
+    -moz-transition:0.5s linear all;
+    -o-transition:0.5s linear all;
+    transition:0.5s linear all;
+    max-height: 0;
+    opacity: 0;
+    left: -50px;
+}
+
+.repeated-item.ng-enter.ng-enter-active {
+    max-height: 90px;
+    opacity: 1;
+    left: 0;
+}
+
+
+@media (max-width:576px){
+	div#search input{
+		padding-bottom: 24px;
+	}
+	#navLeft, #contenPage{
+		position: relative;
+	}
+    #navLeft{
+        padding-top: 50px;
+    }
+}
